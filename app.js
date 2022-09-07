@@ -43,10 +43,10 @@ const value = 'c';
     3:- কোন array থেকে কী ভাবে সব বড় string খুজে বের করবেন এবং তার index number দেখাবেন ?
 */
 
-function findBigText(names){
+function findBigText(names) {
     let largestWord = '';
-    for(name of names){
-        if(name.length > largestWord.length ){
+    for (let name of names) {
+        if (name.length > largestWord.length) {
             largestWord = name;
         }
     }
@@ -55,5 +55,67 @@ function findBigText(names){
 }
 
 const array2 = ['nomaan', 'khan', 'Abdullah', 'Karim', 'hasim'];
-console.log(findBigText(array2));
+// console.log(findBigText(array2));
+
+
+/* 
+    4:- 1 - 100 পর্যন্ত কোন সংখ্যা গুলো ৩, ৫ এবং ৩ ও ৫ উভয় দ্বারা বিভাজ্য তা বের কর। ৫ হলো fizz , ৩ হলো buzz , ৩ ও ৫ হলো fizzBuzz?
+*/
+
+function fizzBuzz(number) {
+    for (let i = 0; i <= number; i++) {
+        if ((i % 3 === 0) && (i % 5 === 0)) {    // use this logic 3 * 5 = 15; (i % 15 === 0) 
+            console.log(`${i} id fizzBuzz.`);
+        }
+        else if (i % 3 === 0) {
+            console.log(`${i} is buzz.`);
+        }
+        else if (i % 5 === 0) {
+            console.log(`${i} is fizz.`);
+        }
+        else {
+            console.log(i);
+        }
+    }
+}
+
+const num = 100;
+// fizzBuzz(num); // call function;
+
+
+/* 
+    5:- কোন একটি array থেকে আমরা কীভাবে falsy value গুলো বাদ দিতে পারি তার একটি program লিখ । falsy value গুলো হলো ঃ- false, null, undefined, NaN, '', 0 ।
+*/
+
+const mixedArray = [
+    '',
+    'Abdullah Al Nomaan',
+    'Nadim',
+    0,
+    'Khan',
+    false,
+    'Robi',
+    undefined,
+    NaN,
+    null
+];
+
+// this problem is solve 2 ways.
+
+/* -- 1st way -- */
+const removeFalseyValue = mixedArray.filter(function (elelment) {
+    if (elelment) {
+        return true;
+    }
+    else {
+        return false;
+    }
+});
+// console.log(removeFalseyValue);
+
+
+/* -- 2nd ways -- */
+const truthyValue = mixedArray.filter(Boolean);  // Boolean this is a mathod. This is check true or flase.
+// console.log(truthyValue);
+
 
