@@ -8,10 +8,31 @@ let sentence = 'Lorem ipsum dolor nomaan sit amet consectetur adipisicing elit. 
 // question 1st problem.
 const position = sentence.match(/nomaan/ig);
 const occurrence = position ? position.length : 0; // handling error;
-console.log(occurrence);
+// console.log(occurrence);
 
 // question 2nd problem.
 let firstIndex = sentence.search(/nsomaan/ig);
 firstIndex = firstIndex >= 0 ? firstIndex : 'Not found!'; // handling error;  
-console.log(firstIndex);
+// console.log(firstIndex);
 
+
+/* 
+    2:- input: linearSearch([a, b, c, d, e, f], 'c')
+        output: index number 2 or 'not found'
+        problem: linearSearch() function টি implement করে দেখাও।
+*/
+
+function linearSearch(array, value) {
+    const length = array.length;
+    for (let i = 0; i < length; i++) {
+        if (array[i] === value) {
+            return i;
+        }
+    }
+    return 'not found'; // handle error;
+}
+
+
+const array = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+const value = 'c';
+console.log(linearSearch(array, value));
