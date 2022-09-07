@@ -1,1 +1,17 @@
-console.log('hello');
+/* 
+    1:- নিচের sentence এ 'Nomaan' এই শব্দটি কয়বার আছে ? প্রথমবার 'Nomaan' কত number index এ আছে তা বের কর ।
+*/
+
+let sentence = 'Lorem ipsum dolor nomaan sit amet consectetur adipisicing elit. Esse laborum, cum sequi, culpa consequuntur doloribus consectetur corrupti sit fugit ab omnis laboriosam amet quae. Quia a ullam quisquam dolorum maxime laudantium in dignissimos minima consectetur rem nomaan non quibusdam perspiciatis deserunt id accusantium earum, eos aut ut aliquid reprehenderit dicta commodi saepe! Natus quo nomaan porro voluptatibus, dolorem molestiae pariatur? Impedit fugit quasi quaerat neque? Alias excepturi nisi nomaan expedita iure officiis est voluptates  nomaan quibusdam culpa doloribus ipsa consectetur possimus, recusandae magni id minima nomaan atque veritatis minus amet? Perspiciatis perferendis blanditiis nomaan quo tempore? Cupiditate, soluta quibusdam necessitatibus in excepturi veniam nomaan facilis voluptatibus nomaan similique.';
+
+
+// question 1st problem.
+const position = sentence.match(/nomaan/ig);
+const occurrence = position ? position.length : 0; // handling error;
+console.log(occurrence);
+
+// question 2nd problem.
+let firstIndex = sentence.search(/nsomaan/ig);
+firstIndex = firstIndex >= 0 ? firstIndex : 'Not found!'; // handling error;  
+console.log(firstIndex);
+
