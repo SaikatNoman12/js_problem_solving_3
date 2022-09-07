@@ -7,32 +7,53 @@ let sentence = 'Lorem ipsum dolor nomaan sit amet consectetur adipisicing elit. 
 
 // question 1st problem.
 const position = sentence.match(/nomaan/ig);
-const occurrence = position ? position.length : 0; // handling error;
+const occurrence = position ? position.length : 0; // handling error.
 // console.log(occurrence);
 
 // question 2nd problem.
 let firstIndex = sentence.search(/nsomaan/ig);
-firstIndex = firstIndex >= 0 ? firstIndex : 'Not found!'; // handling error;  
+firstIndex = firstIndex >= 0 ? firstIndex : 'Not found!'; // handling error.
 // console.log(firstIndex);
 
 
 /* 
-    2:- input: linearSearch([a, b, c, d, e, f], 'c')
-        output: index number 2 or 'not found'
-        problem: linearSearch() function টি implement করে দেখাও।
+    2:-
+    input: linearSearch([a, b, c, d, e, f], 'c')
+    output: index number 2 or 'not found'
+    problem: linearSearch() function টি implement করে দেখাও।
 */
 
 function linearSearch(array, value) {
-    const length = array.length;
+    const length = array.length; // best practice.
     for (let i = 0; i < length; i++) {
         if (array[i] === value) {
             return i;
         }
     }
-    return 'not found'; // handle error;
+    return 'not found'; // handling error.
 }
 
 
 const array = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
 const value = 'c';
-console.log(linearSearch(array, value));
+// console.log(linearSearch(array, value));
+
+
+/* 
+    3:- কোন array থেকে কী ভাবে সব বড় string খুজে বের করবেন এবং তার index number দেখাবেন ?
+*/
+
+function findBigText(names){
+    let largestWord = '';
+    for(name of names){
+        if(name.length > largestWord.length ){
+            largestWord = name;
+        }
+    }
+
+    return [largestWord, names.indexOf(largestWord)];
+}
+
+const array2 = ['nomaan', 'khan', 'Abdullah', 'Karim', 'hasim'];
+console.log(findBigText(array2));
+
