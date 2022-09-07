@@ -119,3 +119,32 @@ const truthyValue = mixedArray.filter(Boolean);  // Boolean this is a mathod. Th
 // console.log(truthyValue);
 
 
+/* 
+        6:- কোন একটি object থেকে আমরা কীভাবে falsy value গুলো বাদ দিতে পারি তার একটি program লিখ । falsy value গুলো হলো ঃ- false, null, undefined, NaN, '', 0 ।
+*/
+
+
+
+function removeFalsyObjValue(obj) {
+    for (let property in obj) {
+        if(!obj[property]){
+            delete obj[property];
+        }
+    }
+    return obj;
+}
+
+
+const mixedObject = {
+    a: 'Abdullah Al Nomaan',
+    b: false,
+    c: null,
+    d: NaN,
+    e: undefined,
+    f: 0,
+    g: '',
+    h:'Feni Computer Instute'
+};
+
+console.log(removeFalsyObjValue(mixedObject));;
+
